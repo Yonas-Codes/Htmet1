@@ -8,7 +8,7 @@
   <!-- Google Fonts & FontAwesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -24,7 +24,7 @@
       --text-muted: #94A3B8;
       --border: rgba(255, 255, 255, 0.1);
       --input-bg: #070B12;
-      --header-bg: rgba(7, 11, 18, 0.9);
+      --header-bg: rgba(7, 11, 18, 0.92);
       --font-heading: 'Space Grotesk', 'Noto Sans Ethiopic', sans-serif;
       --font-body: 'Plus Jakarta Sans', 'Noto Sans Ethiopic', sans-serif;
     }
@@ -41,7 +41,7 @@
       --text-muted: #475569;
       --border: rgba(0, 0, 0, 0.1);
       --input-bg: #F1F5F9;
-      --header-bg: rgba(255, 255, 255, 0.9);
+      --header-bg: rgba(255, 255, 255, 0.92);
     }
 
     * {
@@ -106,7 +106,7 @@
       gap: 10px;
       font-family: var(--font-heading);
       font-weight: 800;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
     }
 
     .logo-icon {
@@ -120,6 +120,21 @@
       color: #070B12;
       font-size: 1.2rem;
       box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .nav-links {
+      display: none;
+      gap: 24px;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    @media (min-width: 992px) {
+      .nav-links { display: flex; }
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
     }
 
     .nav-actions {
@@ -193,7 +208,7 @@
 
     /* HERO SECTION */
     .hero {
-      padding: 130px 0 60px;
+      padding: 140px 0 80px;
       position: relative;
       overflow: hidden;
     }
@@ -219,14 +234,14 @@
 
     .hero-title {
       font-family: var(--font-heading);
-      font-size: 2.3rem;
-      line-height: 1.25;
-      margin-bottom: 18px;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
       font-weight: 800;
     }
 
     @media (min-width: 768px) {
-      .hero-title { font-size: 3.5rem; }
+      .hero-title { font-size: 3.8rem; }
     }
 
     .hero-title span {
@@ -237,16 +252,16 @@
 
     .hero-desc {
       color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 30px;
-      max-width: 680px;
+      font-size: 1.08rem;
+      margin-bottom: 34px;
+      max-width: 700px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 36px;
+      margin-bottom: 40px;
     }
 
     .quick-contact-bar {
@@ -289,15 +304,15 @@
       color: var(--text-main);
     }
 
-    /* SERVICES */
+    /* SECTION HEADINGS */
     .section-title {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 44px;
     }
 
     .section-title h2 {
       font-family: var(--font-heading);
-      font-size: 2.1rem;
+      font-size: 2.2rem;
       margin-bottom: 8px;
     }
 
@@ -306,18 +321,73 @@
       font-size: 0.95rem;
     }
 
+    /* ABOUT US SECTION */
+    .about-section {
+      padding: 70px 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .about-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .about-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 34px;
+      position: relative;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .stat-card {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* SERVICES GRID */
+    .services-section {
+      padding: 70px 0;
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
-      margin-bottom: 60px;
     }
 
     .service-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 26px;
+      padding: 28px;
       transition: all 0.3s ease;
     }
 
@@ -328,21 +398,21 @@
     }
 
     .service-icon {
-      width: 50px;
-      height: 50px;
+      width: 52px;
+      height: 52px;
       background: rgba(0, 210, 255, 0.1);
       color: var(--primary);
       border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.35rem;
-      margin-bottom: 16px;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
     }
 
     .service-card h3 {
       font-family: var(--font-heading);
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       margin-bottom: 10px;
     }
 
@@ -351,17 +421,83 @@
       font-size: 0.9rem;
     }
 
+    /* WHY CHOOSE US */
+    .why-section {
+      padding: 70px 0;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .why-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .why-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: rgba(255, 183, 3, 0.1);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    /* PORTFOLIO SHOWCASE */
+    .portfolio-section {
+      padding: 70px 0;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(0, 210, 255, 0.15);
+      color: var(--primary);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
     /* CONTACT SECTION */
     .contact-section {
+      padding: 70px 0;
+    }
+
+    .contact-box {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 30px;
-      margin-bottom: 60px;
+      padding: 34px;
     }
 
     @media (min-width: 768px) {
-      .contact-section { padding: 44px; }
+      .contact-box { padding: 48px; }
     }
 
     .contact-grid {
@@ -425,7 +561,7 @@
     /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
-      padding: 30px 0;
+      padding: 36px 0;
       text-align: center;
       color: var(--text-muted);
       font-size: 0.88rem;
@@ -435,12 +571,12 @@
       display: flex;
       justify-content: center;
       gap: 14px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .social-btn {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -448,7 +584,7 @@
       align-items: center;
       justify-content: center;
       color: var(--text-main);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       transition: all 0.3s ease;
     }
 
@@ -519,6 +655,14 @@
         <span>ነጥብ ህትመት</span>
       </a>
 
+      <div class="nav-links">
+        <a href="#about" id="navAbout">ስለ እኛ</a>
+        <a href="#services" id="navServices">አገልግሎቶች</a>
+        <a href="#why" id="navWhy">ለምን እኛ?</a>
+        <a href="#portfolio" id="navPortfolio">ስራዎቻችን</a>
+        <a href="#contact" id="navContact">ያግኙን</a>
+      </div>
+
       <div class="nav-actions">
         <!-- LANGUAGE SELECTOR -->
         <select id="langSelect" class="control-select" onchange="changeLanguage(this.value)">
@@ -570,13 +714,59 @@
             <a href="https://t.me/Tgnetib" target="_blank">@Tgnetib</a>
           </div>
         </div>
+        <div class="qc-item">
+          <div class="qc-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="qc-info">
+            <span id="qcLocLabel">አድራሻ</span>
+            <a href="#contact" id="qcLocVal">መገናኛ | Megenegna</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <div class="container">
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+      <div class="about-grid">
+        <div>
+          <div class="badge" id="aboutBadge"><i class="fa-solid fa-award"></i> ስለ ነጥብ ህትመት</div>
+          <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 16px;" id="aboutTitle">የንግድዎ ብሩህ ገጽታ እና የህትመት አጋር</h2>
+          <p style="color: var(--text-muted); margin-bottom: 18px;" id="aboutP1">
+            ነጥብ ህትመት እና ማስታወቂያ በኢትዮጵያ ውስጥ ለሚገኙ የንግድ ድርጅቶች ዘመናዊ፣ ጥራታቸውን የጠበቁ የህትመት እና የማስታወቂያ መፍትሄዎችን ያቀርባል።
+          </p>
+          <p style="color: var(--text-muted);" id="aboutP2">
+            ከባነር ህትመት እስከ ድርጅት ተሽከርካሪዎች ብራንዲንግ፣ ከ3D አክሪሊክ ጽሁፎች እስከ ንግድ ካርዶች ድረስ ስራዎችዎን በፍጥነት እና በጥራት እናስረክባለን።
+          </p>
+        </div>
+
+        <div class="about-box">
+          <h3 style="font-family: var(--font-heading); margin-bottom: 12px;" id="statTitle">የእኛ ድምቀቶች</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;" id="statDesc">በአዲስ አበባ እና አካባቢዋ ለበርካታ ድርጅቶች የታመነ የህትመት አጋር።</p>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">100%</div>
+              <div class="stat-label" id="stat1Label">የጥራት ዋስትና</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">Fast</div>
+              <div class="stat-label" id="stat2Label">ፈጣን ርክክብ</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">3D</div>
+              <div class="stat-label" id="stat3Label">ላይትቦክስ ስራዎች</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">Full</div>
+              <div class="stat-label" id="stat4Label">የመኪና ብራንዲንግ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SERVICES SECTION -->
-    <section id="services">
+    <section id="services" class="services-section">
       <div class="section-title">
         <h2 id="servicesTitle">ዋና ዋና አገልግሎቶቻችን</h2>
         <p id="servicesDesc">ጥራታቸውን የጠበቁ የህትመት እና ማስታወቂያ ስራዎች</p>
@@ -609,55 +799,127 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact-section">
-      <div class="contact-grid">
-        <div>
-          <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px;" id="contactTitle">ያግኙን</h2>
-          <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;" id="contactDesc">ለዋጋ ጥያቄ፣ ለትእዛዝ ወይም ለማንኛውም መረጃ ያግኙን።</p>
+    <!-- WHY CHOOSE US -->
+    <section id="why" class="why-section">
+      <div class="section-title">
+        <h2 id="whyTitle">ለምን ነጥብ ህትመትን ይመርጣሉ?</h2>
+        <p id="whyDesc">ለስራዎ ስኬት የተዘጋጁ ልዩ ብቃቶቻችን</p>
+      </div>
 
-          <div class="contact-card">
-            <i class="fa-solid fa-phone"></i>
-            <div>
-              <div class="contact-card-title" id="lblPhone">ስልክ ቁጥር</div>
-              <div class="contact-card-value"><a href="tel:+251912985440">+251 912 98 54 40</a></div>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <i class="fa-brands fa-telegram"></i>
-            <div>
-              <div class="contact-card-title" id="lblTelegram">ቴሌግራም</div>
-              <div class="contact-card-value"><a href="https://t.me/Tgnetib" target="_blank">@Tgnetib</a></div>
-            </div>
-          </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h4 id="w1Title">ፈጣን አገልግሎት</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem;" id="w1Desc">ስራዎችዎን በተሰጠው የጊዜ ገደብ ውስጥ በጥራት ማጠናቀቅ።</p>
         </div>
 
-        <div>
-          <form onsubmit="handleFormSubmit(event)">
-            <div class="form-group">
-              <label id="lblFormName">ሙሉ ስም</label>
-              <input type="text" id="formName" class="form-control" placeholder="ስምዎን ያስገቡ" required>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-palette"></i></div>
+          <h4 id="w2Title">የጠራ ቀለም</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem;" id="w2Desc">በዘመናዊ ማሽኖች የተደገፈ ደማቅ እና የሚስብ የህትመት ውጤት።</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h4 id="w3Title">የተረጋገጠ ጥራት</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem;" id="w3Desc">ለረጅም ጊዜ የሚቆዩ ዘላቂ የሆኑ የህትመት እና የማስታወቂያ እቃዎች።</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
+          <h4 id="w4Title">ተጣጣሚ ዋጋ</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem;" id="w4Desc">ከተመጣጣኝ ዋጋ ጋር የሚመጣጠን የላቀ የደንበኛ አገልግሎት።</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / WORKS SHOWCASE -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="section-title">
+        <h2 id="portTitle">የስራዎቻችን ናሙናዎች</h2>
+        <p id="portDesc">በቅርቡ ያጠናቀቅናቸው የህትመት እና የማስታወቂያ ፕሮጀክቶች</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <span class="portfolio-badge">Large Format</span>
+          <h3 style="font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 6px;">Flex Banners & Billboards</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem;" id="p1Desc">ከፍተኛ ጥራት ያላቸው የውጪ ማስታወቂያ ባነሮች።</p>
+        </div>
+
+        <div class="portfolio-card">
+          <span class="portfolio-badge">Signage</span>
+          <h3 style="font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 6px;">3D Illuminated Lightbox</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem;" id="p2Desc">ለሱቆች እና ድርጅቶች በሌሊት የሚበሩ 3D አክሪሊክ ምልክቶች።</p>
+        </div>
+
+        <div class="portfolio-card">
+          <span class="portfolio-badge">Branding</span>
+          <h3 style="font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 6px;">Commercial Fleet Branding</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem;" id="p3Desc">የድርጅት ተሽከርካሪዎችን በቪናይል ስቲከር ማሾብ።</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+      <div class="contact-box">
+        <div class="contact-grid">
+          <div>
+            <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px;" id="contactTitle">ያግኙን</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;" id="contactDesc">ለዋጋ ጥያቄ፣ ለትእዛዝ ወይም ለማንኛውም መረጃ ያግኙን።</p>
+
+            <div class="contact-card">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <div class="contact-card-title" id="lblPhone">ስልክ ቁጥር</div>
+                <div class="contact-card-value"><a href="tel:+251912985440">+251 912 98 54 40</a></div>
+              </div>
             </div>
-            <div class="form-group">
-              <label id="lblFormContact">ስልክ / ቴሌግራም</label>
-              <input type="text" id="formContact" class="form-control" placeholder="የስልክ ቁጥር ወይም ቴሌግራም" required>
+
+            <div class="contact-card">
+              <i class="fa-brands fa-telegram"></i>
+              <div>
+                <div class="contact-card-title" id="lblTelegram">ቴሌግራም</div>
+                <div class="contact-card-value"><a href="https://t.me/Tgnetib" target="_blank">@Tgnetib</a></div>
+              </div>
             </div>
-            <div class="form-group">
-              <label id="lblFormService">የሚፈልጉት አገልግሎት</label>
-              <select id="formService" class="form-control">
-                <option id="opt1">ላርጅ ፎርማት ህትመት</option>
-                <option id="opt2">የንግድ ህትመቶች</option>
-                <option id="opt3">3D እና ላይትቦክስ</option>
-                <option id="opt4">የመኪና ብራንዲንግ</option>
-              </select>
+
+            <div class="contact-card">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <div class="contact-card-title" id="lblLocation">አድራሻ</div>
+                <div class="contact-card-value" id="valLocation">መገናኛ | Megenegna, አዲስ አበባ</div>
+              </div>
             </div>
-            <div class="form-group">
-              <label id="lblFormMsg">ዝርዝር መረጃ</label>
-              <textarea id="formMsg" class="form-control" rows="3" placeholder="ስለ ፕሮጀክትዎ ያብራሩ..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" id="btnSend">መልእክት ላክ</button>
-          </form>
+          </div>
+
+          <div>
+            <form onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label id="lblFormName">ሙሉ ስም</label>
+                <input type="text" id="formName" class="form-control" placeholder="ስምዎን ያስገቡ" required>
+              </div>
+              <div class="form-group">
+                <label id="lblFormContact">ስልክ / ቴሌግራም</label>
+                <input type="text" id="formContact" class="form-control" placeholder="የስልክ ቁጥር ወይም ቴሌግራም" required>
+              </div>
+              <div class="form-group">
+                <label id="lblFormService">የሚፈልጉት አገልግሎት</label>
+                <select id="formService" class="form-control">
+                  <option id="opt1">ላርጅ ፎርማት ህትመት</option>
+                  <option id="opt2">የንግድ ህትመቶች</option>
+                  <option id="opt3">3D እና ላይትቦክስ</option>
+                  <option id="opt4">የመኪና ብራንዲንግ</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label id="lblFormMsg">ዝርዝር መረጃ</label>
+                <textarea id="formMsg" class="form-control" rows="3" placeholder="ስለ ፕሮጀክትዎ ያብራሩ..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" id="btnSend">መልእክት ላክ</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -695,12 +957,29 @@
 
     const translations = {
       am: {
+        navAbout: 'ስለ እኛ',
+        navServices: 'አገልግሎቶች',
+        navWhy: 'ለምን እኛ?',
+        navPortfolio: 'ስራዎቻችን',
+        navContact: 'ያግኙን',
         heroBadge: '<i class="fa-solid fa-check-circle"></i> የላቀ ህትመት እና ማስታወቂያ',
         heroSpan: 'ህትመት እና ማስታወቂያ',
         heroDesc: 'ጥራት ያላቸው የህትመት ስራዎች፣ የባነር ህትመት፣ የመኪና ብራንዲንግ፣ 3D ላይትቦክስ እና የቢዝነስ ማስታወቂያ አገልግሎቶች በኢትዮጵያ።',
         btnTgHeader: '<i class="fa-brands fa-telegram"></i> በቴሌግራም ያውሩን',
         qcCallLabel: 'ቀጥታ ጥሪ',
         qcTgLabel: 'ቴሌግራም',
+        qcLocLabel: 'አድራሻ',
+        qcLocVal: 'መገናኛ | Megenegna',
+        aboutBadge: '<i class="fa-solid fa-award"></i> ስለ ነጥብ ህትመት',
+        aboutTitle: 'የንግድዎ ብሩህ ገጽታ እና የህትመት አጋር',
+        aboutP1: 'ነጥብ ህትመት እና ማስታወቂያ በኢትዮጵያ ውስጥ ለሚገኙ የንግድ ድርጅቶች ዘመናዊ፣ ጥራታቸውን የጠበቁ የህትመት እና የማስታወቂያ መፍትሄዎችን ያቀርባል።',
+        aboutP2: 'ከባነር ህትመት እስከ ድርጅት ተሽከርካሪዎች ብራንዲንግ፣ ከ3D አክሪሊክ ጽሁፎች እስከ ንግድ ካርዶች ድረስ ስራዎችዎን በፍጥነት እና በጥራት እናስረክባለን።',
+        statTitle: 'የእኛ ድምቀቶች',
+        statDesc: 'በአዲስ አበባ እና አካባቢዋ ለበርካታ ድርጅቶች የታመነ የህትመት አጋር።',
+        stat1Label: 'የጥራት ዋስትና',
+        stat2Label: 'ፈጣን ርክክብ',
+        stat3Label: 'ላይትቦክስ ስራዎች',
+        stat4Label: 'የመኪና ብራንዲንግ',
         servicesTitle: 'ዋና ዋና አገልግሎቶቻችን',
         servicesDesc: 'ጥራታቸውን የጠበቁ የህትመት እና ማስታወቂያ ስራዎች',
         s1Title: 'ላርጅ ፎርማት ህትመት',
@@ -711,10 +990,27 @@
         s3Desc: 'የ3D አክሪሊክ ጽሁፎች፣ በኤልኢዲ (LED) የሚበሩ ላይትቦክሶች እና የሱቅ ምልክቶች።',
         s4Title: 'የመኪና ብራንዲንግ',
         s4Desc: 'የመኪና ላይ ስቲከር ህትመት እና የድርጅት ተሽከርካሪዎች ብራንዲንግ።',
+        whyTitle: 'ለምን ነጥብ ህትመትን ይመርጣሉ?',
+        whyDesc: 'ለስራዎ ስኬት የተዘጋጁ ልዩ ብቃቶቻችን',
+        w1Title: 'ፈጣን አገልግሎት',
+        w1Desc: 'ስራዎችዎን በተሰጠው የጊዜ ገደብ ውስጥ በጥራት ማጠናቀቅ።',
+        w2Title: 'የጠራ ቀለም',
+        w2Desc: 'በዘመናዊ ማሽኖች የተደገፈ ደማቅ እና የሚስብ የህትመት ውጤት።',
+        w3Title: 'የተረጋገጠ ጥራት',
+        w3Desc: 'ለረጅም ጊዜ የሚቆዩ ዘላቂ የሆኑ የህትመት እና የማስታወቂያ እቃዎች።',
+        w4Title: 'ተጣጣሚ ዋጋ',
+        w4Desc: 'ከተመጣጣኝ ዋጋ ጋር የሚመጣጠን የላቀ የደንበኛ አገልግሎት።',
+        portTitle: 'የስራዎቻችን ናሙናዎች',
+        portDesc: 'በቅርቡ ያጠናቀቅናቸው የህትመት እና የማስታወቂያ ፕሮጀክቶች',
+        p1Desc: 'ከፍተኛ ጥራት ያላቸው የውጪ ማስታወቂያ ባነሮች።',
+        p2Desc: 'ለሱቆች እና ድርጅቶች በሌሊት የሚበሩ 3D አክሪሊክ ምልክቶች።',
+        p3Desc: 'የድርጅት ተሽከርካሪዎችን በቪናይል ስቲከር ማሾብ።',
         contactTitle: 'ያግኙን',
         contactDesc: 'ለዋጋ ጥያቄ፣ ለትእዛዝ ወይም ለማንኛውም መረጃ ያግኙን።',
         lblPhone: 'ስልክ ቁጥር',
         lblTelegram: 'ቴሌግራም',
+        lblLocation: 'አድራሻ',
+        valLocation: 'መገናኛ | Megenegna፣ አዲስ አበባ',
         lblFormName: 'ሙሉ ስም',
         lblFormContact: 'ስልክ / ቴሌግራም',
         lblFormService: 'የሚፈልጉት አገልግሎት',
@@ -727,12 +1023,29 @@
         alertMsg: 'መልእክትዎ በትክክል ተልኳል!'
       },
       en: {
+        navAbout: 'About Us',
+        navServices: 'Services',
+        navWhy: 'Why Us?',
+        navPortfolio: 'Portfolio',
+        navContact: 'Contact',
         heroBadge: '<i class="fa-solid fa-check-circle"></i> Professional Print & Advertising',
         heroSpan: 'Print & Advertising',
         heroDesc: 'High-quality printing, large format banners, vehicle branding, 3D lightboxes, and custom advertising solutions in Ethiopia.',
         btnTgHeader: '<i class="fa-brands fa-telegram"></i> Direct Message',
         qcCallLabel: 'Direct Call',
         qcTgLabel: 'Telegram',
+        qcLocLabel: 'Location',
+        qcLocVal: 'Megenegna, Addis Ababa',
+        aboutBadge: '<i class="fa-solid fa-award"></i> About Netib Print',
+        aboutTitle: 'Your Brand’s Print & Advertising Partner',
+        aboutP1: 'Netib Print & Advertising delivers modern, premium printing and marketing solutions for businesses in Ethiopia.',
+        aboutP2: 'From flex banners to commercial vehicle wraps and 3D illuminated acrylic signage, we execute projects with speed and accuracy.',
+        statTitle: 'Our Highlights',
+        statDesc: 'Trusted printing partner for businesses in Addis Ababa.',
+        stat1Label: 'Quality Assured',
+        stat2Label: 'Fast Turnaround',
+        stat3Label: '3D Lightbox Work',
+        stat4Label: 'Vehicle Wraps',
         servicesTitle: 'Our Main Services',
         servicesDesc: 'Premium quality print & marketing materials',
         s1Title: 'Large Format Printing',
@@ -743,10 +1056,27 @@
         s3Desc: '3D Acrylic letterings, illuminated LED lightboxes, and shopfront signboards.',
         s4Title: 'Vehicle Branding',
         s4Desc: 'Custom car wraps, fleet branding, and high-durability sticker branding.',
+        whyTitle: 'Why Choose Netib Print?',
+        whyDesc: 'Designed to elevate your business presentation',
+        w1Title: 'Fast Turnaround',
+        w1Desc: 'Delivering your orders within deadlines without compromising quality.',
+        w2Title: 'Vibrant Colors',
+        w2Desc: 'Powered by advanced modern printing machines for sharp outputs.',
+        w3Title: 'Durable Quality',
+        w3Desc: 'Long-lasting materials engineered to withstand environmental conditions.',
+        w4Title: 'Competitive Pricing',
+        w4Desc: 'Exceptional value paired with attentive customer service.',
+        portTitle: 'Sample Projects',
+        portDesc: 'Recent printing and advertising work completed for clients',
+        p1Desc: 'High durability outdoor flex banners and billboards.',
+        p2Desc: 'Illuminated 3D acrylic signage for commercial storefronts.',
+        p3Desc: 'Full and partial vinyl wraps for corporate vehicles.',
         contactTitle: 'Contact Us',
         contactDesc: 'Get in touch for quotes, orders, or technical queries.',
         lblPhone: 'Phone Number',
         lblTelegram: 'Telegram Username',
+        lblLocation: 'Location',
+        valLocation: 'Megenegna, Addis Ababa',
         lblFormName: 'Full Name',
         lblFormContact: 'Phone / Telegram',
         lblFormService: 'Service Required',
@@ -759,12 +1089,29 @@
         alertMsg: 'Message sent successfully!'
       },
       om: {
+        navAbout: 'Swa Keenya',
+        navServices: 'Tajaajila',
+        navWhy: 'Maaliif Nu?',
+        navPortfolio: 'Hojiiwwan',
+        navContact: 'Quunnamaa',
         heroBadge: '<i class="fa-solid fa-check-circle"></i> Maxxansaa fi Beeksisa Qulqullina doori',
         heroSpan: 'Maxxansaa fi Beeksisa',
         heroDesc: 'Maxxansa qulqullina olaanaa qabu, baaneraa, beeksisa konkolaataa fi tajaajila beeksisaa viizinesii keessaniif.',
         btnTgHeader: '<i class="fa-brands fa-telegram"></i> Telegraamaan Nuuf Barreessaa',
         qcCallLabel: 'Kallattiin Bilbilaa',
         qcTgLabel: 'Telegraama',
+        qcLocLabel: 'Teessoo',
+        qcLocVal: 'Megenegna, Finfinnee',
+        aboutBadge: '<i class="fa-solid fa-award"></i> Waee Netib Print',
+        aboutTitle: 'Partneri Maxxansaa fi Beeksisa Dhaabbata Keessanii',
+        aboutP1: 'Netib Print tajaajila beeksisaa fi maxxansaa qulqullina ol-aanaa dhaabbata daldala keessaniif dhiyeessa.',
+        aboutP2: 'Maxxansa baaneraa irraa kaasee hanga beeksisa konkolaataa fi 3D lightboxes tti saffisaan ni hojjenna.',
+        statTitle: 'Hojii Keenya',
+        statDesc: 'Finfinnee keessatti hiriyyaa maxxansaa amanamoota.',
+        stat1Label: 'Qulqullina Mirkanaaee',
+        stat2Label: 'Hojii Saffisaa',
+        stat3Label: 'Hojii Lightbox 3D',
+        stat4Label: 'Beeksisa Konkolaataa',
         servicesTitle: 'Tajaajila Keenya Guguddoo',
         servicesDesc: 'Qulqullina ol-aanaa maxxansaa fi meeshaalee beeksisaa',
         s1Title: 'Maxxansa Formaatii Guddaa',
@@ -775,10 +1122,27 @@
         s3Desc: 'Barreeffama 3D Akriiliiki, lightboxes LED fi mallattoolee suuqii.',
         s4Title: 'Beeksisa Konkolaataa',
         s4Desc: 'Moggaasa istiikara konkolaataa fi beeksisa dhaabbata.',
+        whyTitle: 'Maaliif Netib Print Filattu?',
+        whyDesc: 'Milkaaina viizinesii keessaniif kan qophaae',
+        w1Title: 'Tajaajila Saffisaa',
+        w1Desc: 'Yeroo qabame keessatti hojii keessan qulqullinaan xumuruu.',
+        w2Title: 'Halluu Qulqulluu',
+        w2Desc: 'Mashiinota ammayyaatiin maxxansa baredaa dhiyeessuu.',
+        w3Title: 'Qulqullina Yaadaa',
+        w3Desc: 'Meeshaalee maxxansaa kan yeroo dheeraaf turan.',
+        w4Title: 'Gatii Madaalawaa',
+        w4Desc: 'Tajaajila maamilaa gaarii waliin gatii madaalawaa.',
+        portTitle: 'Fakkeenya Hojii Keenyaa',
+        portDesc: 'Hojiiwwan maxxansaa fi beeksisaa dhiheenya kana xumuraman',
+        p1Desc: 'Baaneroota fi bilboordii alatti fayyadaman.',
+        p2Desc: 'Mallattoolee 3D suuqii fi dhaabbataaf kan ifan.',
+        p3Desc: 'Moggaasa istiikara konkolaataa dhaabbataa.',
         contactTitle: 'Nu Quunnamaa',
         contactDesc: 'Gatii fi odeeffannoo dabalataatiif nu quunnamaa.',
         lblPhone: 'Lakk. Bilbilaa',
         lblTelegram: 'Telegraama',
+        lblLocation: 'Teessoo',
+        valLocation: 'Megenegna, Finfinnee',
         lblFormName: 'Maqaa Guutuu',
         lblFormContact: 'Bilbila / Telegraama',
         lblFormService: 'Tajaajila Barbaaddan',
@@ -791,12 +1155,29 @@
         alertMsg: 'Ergaan keessan milkaawinaan ergameera!'
       },
       ti: {
+        navAbout: 'ብዛዕባና',
+        navServices: 'ኣገልግሎታት',
+        navWhy: 'ስለምንታይ ንሕና?',
+        navPortfolio: 'ስራሕቲና',
+        navContact: 'ተወከሱና',
         heroBadge: '<i class="fa-solid fa-check-circle"></i> ብሉጽ ሕትመትን ምልክታን',
         heroSpan: 'ሕትመትን ምልክታን',
         heroDesc: 'ፅሬት ዘለዎ ሕትመታት፣ ናይ ባነር ሕትመት፣ ናይ መኪና ብራንዲንግን ምልክታን ንትካላትኩም።',
         btnTgHeader: '<i class="fa-brands fa-telegram"></i> ብቴሌግራም ኣልዕሉና',
         qcCallLabel: 'ቀጥታ ጻውዒት',
         qcTgLabel: 'ቴሌግራም',
+        qcLocLabel: 'ኣድራሻ',
+        qcLocVal: 'መገናኛ፣ ኣዲስ ኣበባ',
+        aboutBadge: '<i class="fa-solid fa-award"></i> ብዛዕባ ነጥብ ሕትመት',
+        aboutTitle: 'ናይ ንግድኹም ብሩህ ገፅን ናይ ሕትመት መሓዛን',
+        aboutP1: 'ነጥብ ሕትመትን ምልክታን ኣብ ኢትዮጵያ ንዘለው ትካላት ዘመናዊ፣ ፅሬቶም ዝሓለው ናይ ሕትመትን ምልክታን መፍትሒታት የቕርብ።',
+        aboutP2: 'ካብ ባነር ሕትመት ክሳብ ናይ መኪና ብራንዲንግ፣ ካብ 3D ኣክሪሊክ ፅሑፋት ክሳብ ቢዝነስ ካርድ ብቕልጣፈን በጥራትን ነረክብ።',
+        statTitle: 'ቀንዲ ድምቀታትና',
+        statDesc: 'ኣብ ኣዲስ ኣበባን ከባቢኣን ንብዙሓት ትካላት ዝተኣመነ ናይ ሕትመት መሓዛ።',
+        stat1Label: 'ናይ ፅሬት ዋስትና',
+        stat2Label: 'ቕልጡፍ ርክክብ',
+        stat3Label: '3D ላይትቦክስ',
+        stat4Label: 'መኪና ብራንዲንግ',
         servicesTitle: 'ቀንዲ ኣገልግሎትና',
         servicesDesc: 'ፅሬቶም ዝሓለው ናይ ሕትመትን ምልክታን ስራሕቲ',
         s1Title: 'ላርጅ ፎርማት ሕትመት',
@@ -807,10 +1188,27 @@
         s3Desc: '3D ኣክሪሊክ ፅሑፋት፣ ብኤልኢዲ (LED) ዝበሩ ላይትቦክስን ምልክታን።',
         s4Title: 'ናይ መኪና ብራንዲንግ',
         s4Desc: 'ናይ መኪና ስቲከር ሕትመትን ናይ ትካል መኪናታት ብራንዲንግን።',
+        whyTitle: 'ስለምንታይ ነጥብ ሕትመት ይመርፁ?',
+        whyDesc: 'ንዓወት ንግድኹም ዝተዳለዉ ፍሉያት ብቕዓታትና',
+        w1Title: 'ቕልጡፍ ኣገልግሎት',
+        w1Desc: 'ስራሕቲኹም ኣብ ዝተወደበ ግዜ ብፅሬት ምፍጻም።',
+        w2Title: 'ዝነጸረ ሕብሪ',
+        w2Desc: 'ብዘመናውያን ማሽናት ዝተደገፈ ብሩህ ሕትመት።',
+        w3Title: 'ዝተረጋገጸ ፅሬት',
+        w3Desc: 'ንነዊሕ ግዜ ዝፀንሑ ናይ ሕትመትን ምልክታን ኣቑሑት።',
+        w4Title: 'ተመጣጣኒ ዋጋ',
+        w4Desc: 'ምስ ተመጣጣኒ ዋጋ ዝኸይድ ብሉጽ ናይ ዓደግቲ ኣገልግሎት።',
+        portTitle: 'ናይ ስራሕቲና ናሙናታት',
+        portDesc: 'ኣብ ቀረባ ግዜ ዝዛዘምናዮም ናይ ሕትመትን ምልክታን ፕሮጀክታት',
+        p1Desc: 'ልዑል ፅሬት ዘለዎም ናይ ደግፊ ባነራት።',
+        p2Desc: 'ንሱቓትን ትካላትን ብለይቲ ዝበሩ 3D ኣክሪሊክ ምልክታት።',
+        p3Desc: 'ናይ ትካል መኪናታት ብስቲከር ምሽላም።',
         contactTitle: 'ተወከሱና',
         contactDesc: 'ንዋጋን ንእዝዝን ብቐጥታ ተወከሱና።',
         lblPhone: 'ቁጽሪ ስልኪ',
         lblTelegram: 'ቴሌግራም',
+        lblLocation: 'ኣድራሻ',
+        valLocation: 'መገናኛ፣ ኣዲስ ኣበባ',
         lblFormName: 'ሙሉእ ስም',
         lblFormContact: 'ስልኪ / ቴሌግራም',
         lblFormService: 'ዘድልየኩም ኣገልግሎት',
@@ -828,12 +1226,32 @@
       currentLang = lang;
       const t = translations[lang];
 
+      document.getElementById('navAbout').innerText = t.navAbout;
+      document.getElementById('navServices').innerText = t.navServices;
+      document.getElementById('navWhy').innerText = t.navWhy;
+      document.getElementById('navPortfolio').innerText = t.navPortfolio;
+      document.getElementById('navContact').innerText = t.navContact;
+
       document.getElementById('heroBadge').innerHTML = t.heroBadge;
       document.getElementById('heroSpan').innerText = t.heroSpan;
       document.getElementById('heroDesc').innerText = t.heroDesc;
       document.getElementById('btnTgHeader').innerHTML = t.btnTgHeader;
       document.getElementById('qcCallLabel').innerText = t.qcCallLabel;
       document.getElementById('qcTgLabel').innerText = t.qcTgLabel;
+      document.getElementById('qcLocLabel').innerText = t.qcLocLabel;
+      document.getElementById('qcLocVal').innerText = t.qcLocVal;
+
+      document.getElementById('aboutBadge').innerHTML = t.aboutBadge;
+      document.getElementById('aboutTitle').innerText = t.aboutTitle;
+      document.getElementById('aboutP1').innerText = t.aboutP1;
+      document.getElementById('aboutP2').innerText = t.aboutP2;
+      document.getElementById('statTitle').innerText = t.statTitle;
+      document.getElementById('statDesc').innerText = t.statDesc;
+      document.getElementById('stat1Label').innerText = t.stat1Label;
+      document.getElementById('stat2Label').innerText = t.stat2Label;
+      document.getElementById('stat3Label').innerText = t.stat3Label;
+      document.getElementById('stat4Label').innerText = t.stat4Label;
+
       document.getElementById('servicesTitle').innerText = t.servicesTitle;
       document.getElementById('servicesDesc').innerText = t.servicesDesc;
       document.getElementById('s1Title').innerText = t.s1Title;
@@ -844,10 +1262,30 @@
       document.getElementById('s3Desc').innerText = t.s3Desc;
       document.getElementById('s4Title').innerText = t.s4Title;
       document.getElementById('s4Desc').innerText = t.s4Desc;
+
+      document.getElementById('whyTitle').innerText = t.whyTitle;
+      document.getElementById('whyDesc').innerText = t.whyDesc;
+      document.getElementById('w1Title').innerText = t.w1Title;
+      document.getElementById('w1Desc').innerText = t.w1Desc;
+      document.getElementById('w2Title').innerText = t.w2Title;
+      document.getElementById('w2Desc').innerText = t.w2Desc;
+      document.getElementById('w3Title').innerText = t.w3Title;
+      document.getElementById('w3Desc').innerText = t.w3Desc;
+      document.getElementById('w4Title').innerText = t.w4Title;
+      document.getElementById('w4Desc').innerText = t.w4Desc;
+
+      document.getElementById('portTitle').innerText = t.portTitle;
+      document.getElementById('portDesc').innerText = t.portDesc;
+      document.getElementById('p1Desc').innerText = t.p1Desc;
+      document.getElementById('p2Desc').innerText = t.p2Desc;
+      document.getElementById('p3Desc').innerText = t.p3Desc;
+
       document.getElementById('contactTitle').innerText = t.contactTitle;
       document.getElementById('contactDesc').innerText = t.contactDesc;
       document.getElementById('lblPhone').innerText = t.lblPhone;
       document.getElementById('lblTelegram').innerText = t.lblTelegram;
+      document.getElementById('lblLocation').innerText = t.lblLocation;
+      document.getElementById('valLocation').innerText = t.valLocation;
       document.getElementById('lblFormName').innerText = t.lblFormName;
       document.getElementById('lblFormContact').innerText = t.lblFormContact;
       document.getElementById('lblFormService').innerText = t.lblFormService;
@@ -893,7 +1331,7 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
       // Particles
-      const particlesCount = 120;
+      const particlesCount = 140;
       const geometry = new THREE.BufferGeometry();
       const positions = new Float32Array(particlesCount * 3);
 
@@ -907,7 +1345,7 @@
         size: 0.035,
         color: 0x00D2FF,
         transparent: true,
-        opacity: 0.7
+        opacity: 0.75
       });
 
       const particleSystem = new THREE.Points(geometry, material);
